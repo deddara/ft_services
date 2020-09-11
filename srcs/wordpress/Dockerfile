@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 14:54:20 by deddara           #+#    #+#              #
-#    Updated: 2020/09/11 17:13:04 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/11 18:08:14 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,12 +18,10 @@ vim php7 php7-fpm php7-json php7-mysqli mysql mysql-client wget \
 && rm /etc/nginx/conf.d/default.conf && rc-update add php-fpm7 default && \
 mkdir /var/www/deddara
 
-
+#downloading wordpress and creating needed directories
 
 RUN wget https://wordpress.org/latest.tar.gz \
 && tar -xf latest.tar.gz && rm -rf latest.tar.gz && mv wordpress /var/www/deddara/wordpress \
-
-
 && mkdir -p /run/nginx && mkdir -p /run/php
 
 # COPY srcs/wp-config.php /var/www/deddara/wordpress
