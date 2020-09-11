@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 14:54:20 by deddara           #+#    #+#              #
-#    Updated: 2020/09/11 17:04:35 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/11 17:13:04 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ COPY	srcs/supervisord.conf	/etc/supervisord.conf
 # COPY srcs/database_creation.sh /var/
 # RUN bash /var/database_creation.sh
 
-EXPOSE 5050 9000
+EXPOSE 5050
 
 #server starter
 CMD		["usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
