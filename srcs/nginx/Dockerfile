@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 11:42:06 by deddara           #+#    #+#              #
-#    Updated: 2020/09/11 18:16:32 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 15:26:13 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FROM alpine:latest
 COPY ./srcs/nginx.conf ./srcs/index.html ./srcs/supervisord.conf ./
 
 #installing main programs
-RUN apk -U upgrade && apk add openrc openssl openssh nginx vim bash sudo supervisor
+RUN apk add openrc openssl openssh nginx vim bash sudo supervisor
 
 #SSL creating
 RUN openssl req -newkey rsa:2048 -x509 -sha256 -days 30 -nodes -out /etc/ssl/private/deddara.crt \

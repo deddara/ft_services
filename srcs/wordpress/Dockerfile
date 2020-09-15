@@ -6,14 +6,14 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 14:54:20 by deddara           #+#    #+#              #
-#    Updated: 2020/09/15 11:44:07 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 15:25:58 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM alpine:latest
 
 #simple installing
-RUN apk -U upgrade && apk add nginx openrc supervisor \
+RUN apk add nginx openrc supervisor \
 vim php7 php7-fpm php7-json php7-mysqli mysql mysql-client wget \
 && rm /etc/nginx/conf.d/default.conf && rc-update add php-fpm7 default && \
 mkdir /var/www/deddara
@@ -30,7 +30,7 @@ RUN wget https://wordpress.org/latest.tar.gz \
 #nginx configure
 COPY srcs/nginx.conf /etc/nginx/conf.d/
 COPY	srcs/supervisord.conf	/etc/supervisord.conf
-
+COPY srcs/wp-config.php /var/www/deddara/wordpress
 # #database creation
 # COPY srcs/database_creation.sh /var/
 # RUN bash /var/database_creation.sh

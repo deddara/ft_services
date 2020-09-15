@@ -6,13 +6,13 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 13:30:00 by deddara           #+#    #+#              #
-#    Updated: 2020/09/15 14:21:57 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 15:26:06 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM alpine:latest
 
-RUN apk -U upgrade && apk add vim openrc openssl supervisor nginx  \
+RUN apk add vim openrc openssl supervisor nginx  \
 php7 php7-fpm php7-iconv php7-json php7-mbstring php7-mysqli php7-phar php7-session && rc-update add php-fpm7 default
 
 COPY /srcs/nginx.conf /srcs/supervisord.conf /srcs/config.inc.php /
