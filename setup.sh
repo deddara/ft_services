@@ -1,4 +1,4 @@
-services=("nginx" "wordpress" "mysql" "phpmyadmin")
+services=("nginx" "wordpress" "mysql" "phpmyadmin" "ftps")
 
 minikube start --vm-driver=virtualbox
 
