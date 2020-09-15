@@ -6,14 +6,14 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 18:11:07 by deddara           #+#    #+#              #
-#    Updated: 2020/09/11 18:42:45 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 10:34:14 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM alpine:latest
 RUN apk -U upgrade && apk add vim openrc mysql mysql-client
 
-COPY /db.cnf ./etc/mysql/
+COPY /my.cnf ./etc/mysql/
 
 VOLUME	["sys/fs/cgroup"]
 VOLUME	["/var/lib/mysql"]
