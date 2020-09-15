@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/11 18:11:07 by deddara           #+#    #+#              #
-#    Updated: 2020/09/15 10:34:14 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 11:50:58 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,11 @@ FROM alpine:latest
 RUN apk -U upgrade && apk add vim openrc mysql mysql-client
 
 COPY /my.cnf ./etc/mysql/
+COPY /start.sh ./
 
 VOLUME	["sys/fs/cgroup"]
-VOLUME	["/var/lib/mysql"]
+VOLUME	["/var/lib"]
 
 EXPOSE 3306
 
-ENTRYPOINT	rc default && /etc/init.d/mariadb setup && /usr/bin/mysqld_safe
+ENTRYPOINT ./start.sh

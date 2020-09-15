@@ -10,7 +10,7 @@ kubectl apply -f srcs/k8s_configs/metallb.yaml
 for service in "${services[@]}"
 do
 printf "docker build ${service}: "
-docker build srcs/${service} -t "${service}-image" > /dev/null
+docker build srcs/${service} -t "${service}-image"
 printf "status - OK\n"
 done
 
