@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/15 13:30:00 by deddara           #+#    #+#              #
-#    Updated: 2020/09/15 13:44:50 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/15 13:49:03 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,6 @@ RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.xz &
 COPY ./srcs/nginx.conf ./srcs/supervisord.conf ./srcs/config.inc.php ./
 
 RUN rm -f /etc/nginx/conf.d/default.conf && mv nginx.conf /etc/nginx/conf.d &&  \
-mv config.inc.php /etc/nginx/conf.d/
+mv config.inc.php /etc/nginx/conf.d/ && mv supervisord.conf /etc/supervisord.conf && mkdir /run/nginx /var/run/php
 
 EXPOSE 5000
