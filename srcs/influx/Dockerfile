@@ -6,13 +6,13 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/16 12:02:43 by deddara           #+#    #+#              #
-#    Updated: 2020/09/16 13:54:56 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/16 13:58:30 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FROM alpine:latest
 
-RUN apk add supervisor && rm -rf /var/cache/apk/*
+RUN apk add supervisor ca-certificates && rm -rf /var/cache/apk/*
 
 COPY	srcs/supervisord.conf	/etc/supervisord.conf
 #adding library
