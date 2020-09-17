@@ -13,7 +13,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: influx-deploy
+  name: influx
 spec:
   selector:
     matchLabels:
