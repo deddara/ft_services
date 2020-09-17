@@ -6,7 +6,7 @@
 #    By: deddara <deddara@student.21-school.ru>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/16 13:57:17 by deddara           #+#    #+#              #
-#    Updated: 2020/09/16 14:04:10 by deddara          ###   ########.fr        #
+#    Updated: 2020/09/17 15:25:45 by deddara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,8 @@ RUN wget https://dl.grafana.com/oss/release/grafana-7.1.5.linux-amd64.tar.gz \
 &&	tar -zxvf grafana-7.1.5.linux-amd64.tar.gz \
 &&	rm -rf grafana-7.1.5.linux-amd64.tar.gz \
 &&	mv /grafana-7.1.5 /grafana
+
+COPY	./srcs/grafana.db /grafana/data/
 
 EXPOSE	3000
 
