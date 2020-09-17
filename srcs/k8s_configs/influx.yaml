@@ -39,10 +39,10 @@ spec:
         ports:
         - containerPort: 8086
         volumeMounts:
+        - name: influx-storage
+          mountPath: /var/lib/influxdb
         - name: dockersock
           mountPath: /var/run/docker.sock
-        - name: influx-storage
-          mountPath: /var/lib/
 ---
 apiVersion: v1
 kind: Service

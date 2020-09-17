@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: grafana
-   strategy:
+  strategy:
     type: Recreate
   template:
     metadata:
